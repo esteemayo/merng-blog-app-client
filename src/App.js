@@ -1,24 +1,43 @@
-import logo from './logo.svg';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { Container } from 'semantic-ui-react';
+
+import ProtectedRoute from './utils/ProtectedRoute';
+import ApolloProvider from './ApolloProvider';
+import { AuthProvider } from './context/auth';
+import SingleBlog from './pages/SingleBlog';
+import UpdateBlog from './pages/updateBlog';
+import MenuBar from './components/MenuBar';
+import AuthRoute from './utils/AuthRoute';
+import Footer from './components/Footer';
+import Register from './pages/Register';
+import NotFound from './pages/NotFound';
+import Login from './pages/Login';
+import Home from './pages/Home';
+
+import 'semantic-ui-css/semantic.min.css';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider>
+      <AuthProvider>
+        <BrowserRouter>
+          <Container>
+            <MenuBar />
+            <Switch>
+              <ProtectedRoute path='/blogs/:blogId/edit' component={UpdateBlog} />
+              <Route path='/blogs/:blogId' component={SingleBlog} />
+              <AuthRoute path='/register' component={Register} />
+              <AuthRoute path='/login' component={Login} />
+              <Route path='/' exact component={Home} />
+              <Redirect from='/blogs' to='/' />
+              <Route path='*' component={NotFound} />
+            </Switch>
+            <Footer />
+          </Container>
+        </BrowserRouter>
+      </AuthProvider>
+    </ApolloProvider>
   );
 }
 
