@@ -20,7 +20,7 @@ const DeleteButton = ({ blogId, commentId, callback }) => {
       if (!commentId) {
         // Remove blog from cache
         const data = proxy.readQuery({ query: FETCH_BLOGS_QUERY });
-        const newData = data.getBlogs.filter((b) => b.id !== blogId);
+        const newData = data.getBlogs && data.getBlogs.filter((b) => b.id !== blogId);
         proxy.writeQuery({ query: FETCH_BLOGS_QUERY, data: { newData } });
       }
 
