@@ -10,6 +10,10 @@ const Home = () => {
   const { user } = useGlobalContext();
   const { loading, data } = useQuery(FETCH_BLOGS_QUERY);
 
+  if (data && data.getBlogs.length < 1) {
+    return null;
+  }
+
   return (
     <Grid columns={3}>
       <Grid.Row>
@@ -29,7 +33,7 @@ const Home = () => {
           </Dimmer>
         ) : (
           <Transition.Group>
-            {data.getBlogs &&
+            {data &&
               data.getBlogs.map((blog) => (
                 <Grid.Column key={blog.id} style={{ marginBottom: 20 }}>
                   <BlogCard {...blog} />
