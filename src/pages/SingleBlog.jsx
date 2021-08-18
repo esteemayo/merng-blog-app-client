@@ -71,8 +71,8 @@ const SingleBlog = ({ history }) => {
             <Card.Content>
               <Card.Header>{data.getBlog.username}</Card.Header>
               <Card.Meta>{moment(data.getBlog.createdAt).fromNow()}</Card.Meta>
-              {data.getBlog.content.split('\n').map((p, i) => (
-                <Card.Description key={i}>{p}</Card.Description>
+              {data.getBlog.content.split('\n').map((p, index) => (
+                <Card.Description key={index}>{p}</Card.Description>
               ))}
             </Card.Content>
             <hr />

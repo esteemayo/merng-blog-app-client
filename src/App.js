@@ -1,9 +1,6 @@
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
 
-import ProtectedRoute from './utils/ProtectedRoute';
-import ApolloProvider from './ApolloProvider';
-import { AuthProvider } from './context/auth';
 import SingleBlog from './pages/SingleBlog';
 import UpdateBlog from './pages/updateBlog';
 import MenuBar from './components/MenuBar';
@@ -13,6 +10,10 @@ import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 import Login from './pages/Login';
 import Home from './pages/Home';
+
+import ProtectedRoute from './utils/ProtectedRoute';
+import ApolloProvider from './ApolloProvider';
+import { AuthProvider } from './context/auth';
 
 import 'semantic-ui-css/semantic.min.css';
 import './App.css';
@@ -39,6 +40,6 @@ function App() {
       </AuthProvider>
     </ApolloProvider>
   );
-}
+};
 
 export default App;

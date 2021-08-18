@@ -23,7 +23,7 @@ const BlogForm = () => {
 
   function createBlogCallback() {
     createBlog();
-  }
+  };
 
   return (
     <>
