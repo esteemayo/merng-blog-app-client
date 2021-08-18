@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client';
 import { Button, Form } from 'semantic-ui-react';
 
 import { REGISTER_USER_MUTATION } from '../utils/graphql';
-import { useGlobalContext } from '../context/auth';
+import { useGlobalContext } from '../context/Global';
 import { useForm } from '../utils/useForm';
 
 const Register = () => {
@@ -37,14 +37,14 @@ const Register = () => {
 
   function registerUserCallback() {
     registerUser();
-  }
+  };
 
   return (
     <div className='form-container'>
       <Form
         onSubmit={handleSubmit}
-        noValidate
         className={loading ? 'loading' : ''}
+        noValidate
       >
         <h1 className='heading-secondary'>Register</h1>
         <Form.Input

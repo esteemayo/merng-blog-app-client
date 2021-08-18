@@ -12,8 +12,8 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 
 import ProtectedRoute from './utils/ProtectedRoute';
+import { AppProvider } from './context/Global';
 import ApolloProvider from './ApolloProvider';
-import { AuthProvider } from './context/auth';
 
 import 'semantic-ui-css/semantic.min.css';
 import './App.css';
@@ -21,7 +21,7 @@ import './App.css';
 function App() {
   return (
     <ApolloProvider>
-      <AuthProvider>
+      <AppProvider>
         <BrowserRouter>
           <Container>
             <MenuBar />
@@ -37,7 +37,7 @@ function App() {
             <Footer />
           </Container>
         </BrowserRouter>
-      </AuthProvider>
+      </AppProvider>
     </ApolloProvider>
   );
 };

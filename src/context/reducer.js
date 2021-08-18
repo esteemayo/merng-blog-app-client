@@ -1,12 +1,14 @@
+import { LOGIN, LOGOUT } from './Types';
+
 const reducer = (state, action) => {
   switch (action.type) {
-    case 'LOGIN':
+    case LOGIN:
       return {
         ...state,
         user: action.payload,
       };
 
-    case 'LOGOUT':
+    case LOGOUT:
       return {
         ...state,
         user: null,

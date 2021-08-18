@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client';
 import { Dimmer, Grid, Loader, Transition } from 'semantic-ui-react';
 
 import { FETCH_BLOGS_QUERY } from '../utils/graphql';
-import { useGlobalContext } from '../context/auth';
+import { useGlobalContext } from '../context/Global';
 import BlogCard from '../components/BlogCard';
 import BlogForm from '../components/BlogForm';
 
