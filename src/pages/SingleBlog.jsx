@@ -15,8 +15,8 @@ import { Link, useParams } from 'react-router-dom';
 import moment from 'moment';
 
 import { CREATE_COMMENT_MUTATION, FETCH_BLOG_QUERY } from '../utils/graphql';
+import { useGlobalContext } from '../context/GlobalState';
 import DeleteButton from '../components/DeleteButton';
-import { useGlobalContext } from '../context/Global';
 import LikeButton from '../components/LikeButton';
 import MyPopup from '../utils/MyPopup';
 import image from '../img/molly.png';

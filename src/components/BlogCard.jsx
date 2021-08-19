@@ -2,7 +2,7 @@ import { Button, Card, Icon, Image, Label } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
-import { useGlobalContext } from '../context/Global';
+import { useGlobalContext } from '../context/GlobalState';
 import DeleteButton from './DeleteButton';
 import MyPopup from '../utils/MyPopup';
 import LikeButton from './LikeButton';

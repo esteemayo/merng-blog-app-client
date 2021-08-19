@@ -1,6 +1,6 @@
 import { Route, Redirect } from 'react-router-dom';
 
-import { useGlobalContext } from '../context/Global';
+import { useGlobalContext } from '../context/GlobalState';
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
     const { user } = useGlobalContext();

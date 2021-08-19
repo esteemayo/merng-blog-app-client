@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react';
 
-import { useGlobalContext } from '../context/Global';
+import { useGlobalContext } from '../context/GlobalState';
 
 const MenuBar = () => {
   const { user, logout } = useGlobalContext();

@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client';
 import { Button, Form } from 'semantic-ui-react';
 
 import { REGISTER_USER_MUTATION } from '../utils/graphql';
-import { useGlobalContext } from '../context/Global';
+import { useGlobalContext } from '../context/GlobalState';
 import { useForm } from '../utils/useForm';
 
 const Register = () => {

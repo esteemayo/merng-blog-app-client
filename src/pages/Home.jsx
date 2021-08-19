@@ -1,18 +1,14 @@
 import { useQuery } from '@apollo/client';
 import { Dimmer, Grid, Loader, Transition } from 'semantic-ui-react';
 
+import { useGlobalContext } from '../context/GlobalState';
 import { FETCH_BLOGS_QUERY } from '../utils/graphql';
-import { useGlobalContext } from '../context/Global';
 import BlogCard from '../components/BlogCard';
 import BlogForm from '../components/BlogForm';
 
 const Home = () => {
   const { user } = useGlobalContext();
   const { loading, data } = useQuery(FETCH_BLOGS_QUERY);
-
-  if (data && data.getBlogs.length < 1) {
-    return null;
-  }
 
   return (
     <Grid columns={3}>

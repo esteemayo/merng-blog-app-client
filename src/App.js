@@ -11,8 +11,8 @@ import NotFound from './pages/NotFound';
 import Login from './pages/Login';
 import Home from './pages/Home';
 
+import { AppProvider } from './context/GlobalState';
 import ProtectedRoute from './utils/ProtectedRoute';
-import { AppProvider } from './context/Global';
 import ApolloProvider from './ApolloProvider';
 
 import 'semantic-ui-css/semantic.min.css';

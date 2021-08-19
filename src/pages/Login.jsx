@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { Button, Form } from 'semantic-ui-react';
 
+import { useGlobalContext } from '../context/GlobalState';
 import { LOGIN_USER_MUTATION } from '../utils/graphql';
-import { useGlobalContext } from '../context/Global';
 import { useForm } from '../utils/useForm';
 
 const Login = () => {
